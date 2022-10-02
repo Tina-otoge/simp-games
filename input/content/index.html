@@ -1,0 +1,7 @@
+{% extends "base.html" %} {% block body %}
+
+<h1 class="">My Games List</h1>
+<ul>
+  {% for game in data.games %} {% include "gameslist_item.html" %} {% endfor %}
+</ul>
+{% endblock %}

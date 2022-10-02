@@ -1,0 +1,8 @@
+<li>
+  {% if game.images %} {% with cover = game.images.pop('cover') %}
+  <div class="cover">
+    <img src="{{ cover }}" alt="{{ game.name }}'s cover" />
+  </div>
+  {% endwith %} {% endif %}
+  <div class="title">{{ game.pop('name') }}</div>
+</li>
