@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  strapi:
+    build: app
+    environment:
+      PORT: 1337
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+    volumes:
+      - ./app/src:/opt/app/src
+      - ./app/config:/opt/app/config
+      - ./app/database:/opt/app/database
+      - ./app/public/uploads:/opt/app/public/uploads
+      - ./app/package.json:/opt/app/package.json
+      - ./app/yarn.lock:/opt/app/yarn.lock
+      - ./app/.env:/opt/app/.env
+
+      - /opt/app/node_modules
+      - /opt/app/.tmp
+      - /opt/app/.cache
+    ports:
+      # To use anything else, also change PORT in the environment section
+      # The port you forward and the port in the container must be the same
+      - '1337:1337'
+    networks:
+      - all
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: strapi
+    volumes:
+      - /var/lib/postgresql/data
+    networks:
+      - all
+
+networks:
+  all:
