@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run CMS",
+            "label": "Back | Run CMS",
             "type": "shell",
             "command": "./scripts/launch.sh",
             "options": {
@@ -12,7 +12,7 @@
             },
         },
         {
-            "label": "Rebuild CMS",
+            "label": "Back | Rebuild CMS",
             "type": "shell",
             "command": "./scripts/rebuild.sh",
             "options": {
@@ -20,7 +20,7 @@
             },
         },
         {
-            "label": "Build and watch front",
+            "label": "Front | Build and watch",
             "type": "shell",
             "command": "./scripts/watch.sh",
             "options": {

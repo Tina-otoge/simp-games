@@ -1,0 +1,8 @@
+services:
+  strapi:
+    environment:
+      NODE_ENV: production
+    command: "yarn start"
+
+  db:
+    ports: []

@@ -19,9 +19,6 @@
     "description": {
       "type": "richtext"
     },
-    "comment": {
-      "type": "richtext"
-    },
     "medias": {
       "type": "media",
       "multiple": true,
@@ -55,6 +52,12 @@
     "ero": {
       "type": "boolean",
       "default": false
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "game"
     }
   }
 }

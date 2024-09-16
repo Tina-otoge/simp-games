@@ -20,8 +20,8 @@ services:
       - ./app/yarn.lock:/opt/app/yarn.lock
       - ./app/.env:/opt/app/.env
 
-      - /opt/app/node_modules
-      - /opt/app/.tmp
+      # - /opt/app/node_modules
+      # - /opt/app/.tmp
       - /opt/app/.cache
     ports:
       # To use anything else, also change PORT in the environment section
